@@ -1,0 +1,21 @@
+<% const camelName = name.charAt(0).toUpperCase() + name.slice(1) -%>
+import { useContext } from 'react';
+import styles from './<%=name%>.module.scss'
+import { <%=camelName%>Data } from './<%=name%>Adapter';
+
+const Presenter = () => {
+  const { query } = useContext(<%=camelName%>Data);
+
+  let contents;
+  if (query.isLoading) {
+    contents = <div>Loading...</div>;
+  } else if (query.isError) {
+    contents = <div>Error: {query.error.message}</div>;
+  } else {
+    contents = <div>Data fetched</div>;
+  }
+
+  return <section className={styles.container}>{contents}</section>;
+};
+
+export default Presenter;

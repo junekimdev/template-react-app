@@ -1,0 +1,19 @@
+<% const camelName = name.charAt(0).toUpperCase() + name.slice(1) -%>
+import { useState } from 'react';
+import { <%=camelName%>Data } from './<%=name%>Adapter';
+import Presenter from './<%=name%>Presenter';
+import { <%=camelName%>ProviderType } from './<%=name%>Type';
+
+const Interactor = () => {
+  //const [] = useState();
+
+  const providerValue: <%=camelName%>ProviderType = { query: {} };
+
+  return (
+    <<%=camelName%>Data.Provider value={providerValue}>
+      <Presenter />
+    </<%=camelName%>Data.Provider>
+  );
+};
+
+export default Interactor;

@@ -1,0 +1,13 @@
+<% const camelName = name.charAt(0).toUpperCase() + name.slice(1) -%>
+import { useContext } from 'react';
+import styles from './<%=name%>.module.scss'
+import { <%=camelName%>Data } from './<%=name%>Adapter';
+//import { <%=camelName%>Type } from './<%=name%>Type';
+
+const View = () => {
+  const { query } = useContext(<%=camelName%>Data);
+
+  return <div className={styles.view}>{query.data}</div>;
+};
+
+export default View;

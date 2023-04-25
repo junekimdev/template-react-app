@@ -77,7 +77,7 @@ API_URL=http://api.domain.com
 - Website client-side rendering framework: ReactJS
 - Website server-side rendering framework: NextJS
 - Package management: Webpack (included in NextJS)
-- Transpiler: Speedy Wen Compiler (included in NextJS)
+- Transpiler: Speedy Web Compiler (included in NextJS)
 - State management (client): React State
 - State management (server): React-query v4
 - HTTP interface: fetch API (part of WHATWG Web Standard)

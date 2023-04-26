@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import styles from './example.module.scss';
 import { ExampleData } from './exampleAdapter';
-import PostsView from './examplePostsView';
+import ViewPosts from './exampleViewPosts';
 
 const Presenter = () => {
   const { query } = useContext(ExampleData);
@@ -12,7 +12,7 @@ const Presenter = () => {
   } else if (query.isError) {
     contents = <div>Error: {query.error.message}</div>;
   } else {
-    contents = <PostsView />;
+    contents = <ViewPosts />;
   }
 
   return <section className={styles.container}>{contents}</section>;

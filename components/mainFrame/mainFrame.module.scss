@@ -1,7 +1,17 @@
 /* autoprefixer grid: autoplace */
 @use '../theme';
 
+// Color Palette
+// #452E99
+// #5D4D99
+// #291F4D
+// #998D1F
+// #4D481F
+
 .main {
+  --navbar-color-white: var(--background-color);
+  --navbar-color-primary: #392094;
+  --navbar-width: 48px;
   position: relative;
   width: 100%;
   min-height: 100%;
@@ -13,7 +23,7 @@
   left: 0;
   height: 100vh;
   width: var(--navbar-width);
-  background-color: var(--navbar-bg-color);
+  background-color: var(--navbar-color-primary);
 
   a {
     width: var(--navbar-width);
@@ -37,7 +47,8 @@
 .mainFrame {
   width: calc(100% - var(--navbar-width));
   height: 100%;
+  margin-left: var(--navbar-width);
   display: flex;
   flex-direction: column;
-  margin-left: var(--navbar-width);
+  align-items: center;
 }

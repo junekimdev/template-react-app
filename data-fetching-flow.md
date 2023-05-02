@@ -1,4 +1,4 @@
-# Fetching Dataflow
+# Data-Fetching Flow
 
 - `State Layer` **stores & manages** data
 - `Event Layer` **writes** data
@@ -8,9 +8,8 @@
 sequenceDiagram
   participant B as Backend
 
-  box rgb(50,50,255) State/Event Layer
+  box rgb(50,50,255) State Layer
   participant Q as React-Query
-  participant I as Interactor
   end
 
   box rgb(50,50,255) Display Layer
@@ -18,18 +17,17 @@ sequenceDiagram
   participant V as View
   end
 
-  Note over I: Loading
-  I->>Q: useQuery()
+  Note over P: Loading
+  P->>Q: useQuery()
   Q->>+B: fetch()
   B->>-Q: {Data}
-  Q->>I: Data
-  Note over I: Store
-  I->>P: useContext()
-  I->>V: useContext()
+  Note over Q: Store
+  Q->>P: QueryResult
+  P->>V: props
 ```
 
-> In this diagram, state layer and event layer are combined
->
-> `Interactor` manages both UI-states and events
+> `Interactor` manages events
 >
 > `React-Query` manages Network-states
+>
+> `States` manages UI-states

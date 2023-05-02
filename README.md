@@ -78,13 +78,13 @@ API_URL=http://api.domain.com
 - Website server-side rendering framework: NextJS
 - Package management: Webpack (included in NextJS)
 - Transpiler: Speedy Web Compiler (included in NextJS)
-- State management (client): React State
+- State management (client): Recoil
 - State management (server): React-query v4
 - HTTP interface: fetch API (part of WHATWG Web Standard)
 - JavaScript Testing Framework: Jest
 - React Testing Library: @testing-library/react
 - Browser style normalization script: Normalize
-- Stylesheet preprocessor: SASS/SCSS
+- Stylesheet preprocessor: SCSS
 - Stylesheet postprocessor: Postcss (included in NextJS)
 - Postcss plugin: Autoprefixer (included in NextJS)
 - Version control: Git
@@ -104,11 +104,11 @@ Root
     └── eachComponent  
         ├── index.ts  
         ├── eachComponent.module.scss  
-        ├── eachComponentAdapter.tsx  
         ├── eachComponentInteractor.tsx  
+        ├── eachComponentStates.ts  
         ├── eachComponentPresenter.tsx  
         ├── eachComponentViewName.tsx  
-        └── eachComponentType.tsx  
+        └── eachComponentType.ts  
 ├── controllers  
     ├── index.ts  
     ├── apiURLs.ts  
@@ -119,6 +119,8 @@ Root
 ├── pages  
     ├── _app.tsx  
     ├── _document.tsx  
+    ├── _error.tsx  
+    ├── 404.tsx  
     ├── index.ts  
     └── global.scss  
 ├── public  

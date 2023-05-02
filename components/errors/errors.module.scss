@@ -1,0 +1,44 @@
+/* autoprefixer grid: autoplace */
+@use '../theme';
+
+.container {
+  --errors-color-white: var(--background-color);
+  --errors-color-primary: #392094;
+  --errors-color-license: #a0a0a0;
+  background-color: var(--errors-color-white);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+}
+
+.errorImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: min(80vh, 80vw);
+    height: min(80vh, 80vw);
+  }
+}
+
+.imageLicenseTxt {
+  font-size: 0.5rem;
+  color: var(--errors-color-license);
+}
+
+.btnBackToHome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20ch;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  background-color: var(--errors-color-primary);
+  color: var(--errors-color-white);
+  border-radius: 8px;
+}

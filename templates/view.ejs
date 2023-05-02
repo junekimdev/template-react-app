@@ -1,13 +1,14 @@
 <% const camelName = name.charAt(0).toUpperCase() + name.slice(1) -%>
-import { useContext } from 'react';
+import { useRecoilValue } from 'recoil';
 import styles from './<%=name%>.module.scss'
-import { <%=camelName%>Data } from './<%=name%>Adapter';
-//import { <%=camelName%>Type } from './<%=name%>Type';
+import { useLinkClick } from './<%=name%>Interactor';
+import { <%=camelName%>State } from './<%=name%>States';
 
 const View = () => {
-  const { query } = useContext(<%=camelName%>Data);
+  const data = useRecoilValue(<%=camelName%>State);
+  const onLinkClick = useLinkClick();
 
-  return <div className={styles.view}>{query.data}</div>;
+  return <div className={styles.view}>{data}</div>;
 };
 
 export default View;

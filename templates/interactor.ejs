@@ -1,19 +1,13 @@
 <% const camelName = name.charAt(0).toUpperCase() + name.slice(1) -%>
-import { useState } from 'react';
-import { <%=camelName%>Data } from './<%=name%>Adapter';
-import Presenter from './<%=name%>Presenter';
-import { <%=camelName%>ProviderType } from './<%=name%>Type';
+import { MouseEvent, useCallback } from 'react';
+import { useSetRecoilState } from 'recoil';
+import { <%=camelName%>State } from './<%=name%>States';
 
-const Interactor = () => {
-  //const [] = useState();
+export const useLinkClick = () => {
+  const setState = useSetRecoilState(<%=camelName%>State);
 
-  const providerValue: <%=camelName%>ProviderType = { query: {} };
-
-  return (
-    <<%=camelName%>Data.Provider value={providerValue}>
-      <Presenter />
-    </<%=camelName%>Data.Provider>
-  );
+  return useCallback((e: MouseEvent<HTMLAnchorElement>) => {
+    const id: string = e.target.id ?? '';
+    setState(id);
+  }, []);
 };
-
-export default Interactor;

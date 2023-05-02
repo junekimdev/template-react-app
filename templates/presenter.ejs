@@ -1,18 +1,26 @@
 <% const camelName = name.charAt(0).toUpperCase() + name.slice(1) -%>
-import { useContext } from 'react';
+import { placeholderUrl } from '../../controllers/apiURLs';
+import { staticQuery } from '../../controllers/net/staticQuery';
 import styles from './<%=name%>.module.scss'
-import { <%=camelName%>Data } from './<%=name%>Adapter';
+import { <%=camelName%>Type } from './<%=name%>Type';
 
 const Presenter = () => {
-  const { query } = useContext(<%=camelName%>Data);
+  const query = staticQuery<<%=camelName%>Type>(placeholderUrl);
 
   let contents;
-  if (query.isLoading) {
-    contents = <div>Loading...</div>;
-  } else if (query.isError) {
-    contents = <div>Error: {query.error.message}</div>;
-  } else {
-    contents = <div>Data fetched</div>;
+  switch (query.status) {
+    case 'loading':
+      contents = <div>Loading...</div>;
+      break;
+    case 'error':
+      contents = <div>Error: {query.error.message}</div>;
+      break;
+    case 'success':
+      contents = <div>{query.data}</div>;
+      break;
+    default:
+      contents = <div></div>;
+      break;
   }
 
   return <section className={styles.container}>{contents}</section>;

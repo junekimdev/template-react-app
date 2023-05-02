@@ -1,11 +1,2 @@
 <% const camelName = name.charAt(0).toUpperCase() + name.slice(1) -%>
-import { UseQueryResult } from '@tanstack/react-query';
-//import { ChangeEvent, MouseEvent } from "react";
-
 export type <%=camelName%>Type = {};
-
-export type <%=camelName%>QueryType = UseQueryResult<<%=camelName%>Type, Error>;
-
-export type <%=camelName%>ProviderType = {
-  query?: <%=camelName%>QueryType;
-};

@@ -1,1 +1,1 @@
-export { default } from './mainFrameInteractor';
+export { default } from './mainFramePresenter';

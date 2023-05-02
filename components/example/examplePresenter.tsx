@@ -1,18 +1,26 @@
-import { useContext } from 'react';
+import { placeholderUrl } from '../../controllers/apiURLs';
+import { staticQuery } from '../../controllers/net/staticQuery';
 import styles from './example.module.scss';
-import { ExampleData } from './exampleAdapter';
-import ViewPosts from './exampleViewPosts';
+import { ExamplePost } from './exampleType';
+import Posts from './exampleViewPosts';
 
 const Presenter = () => {
-  const { query } = useContext(ExampleData);
+  const query = staticQuery<ExamplePost[]>(placeholderUrl);
 
   let contents;
-  if (query.isLoading) {
-    contents = <div>Loading...</div>;
-  } else if (query.isError) {
-    contents = <div>Error: {query.error.message}</div>;
-  } else {
-    contents = <ViewPosts />;
+  switch (query.status) {
+    case 'loading':
+      contents = <div>Loading...</div>;
+      break;
+    case 'error':
+      contents = <div>Error: {query.error.message}</div>;
+      break;
+    case 'success':
+      contents = <Posts data={query.data} />;
+      break;
+    default:
+      contents = <div></div>;
+      break;
   }
 
   return <section className={styles.container}>{contents}</section>;

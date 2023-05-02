@@ -1,14 +1,11 @@
-import { useContext } from 'react';
 import styles from './example.module.scss';
-import { ExampleData } from './exampleAdapter';
-import ViewPostSingle from './exampleViewPostSingle';
-import { ExamplePostType } from './exampleType';
+import { ExamplePost } from './exampleType';
+import PostSingle from './exampleViewPostSingle';
 
-const View = () => {
-  const { query } = useContext(ExampleData);
-  const dataMapper = (post: ExamplePostType) => <ViewPostSingle key={post.id} post={post} />;
+const View = ({ data }) => {
+  const dataMapper = (post: ExamplePost) => <PostSingle key={post.id} post={post} />;
 
-  return <div className={styles.view}>{query.data.map(dataMapper)}</div>;
+  return <div className={styles.view}>{data.map(dataMapper)}</div>;
 };
 
 export default View;

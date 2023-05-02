@@ -1,10 +1,9 @@
-import { memo, useContext } from 'react';
+import { memo } from 'react';
 import styles from './example.module.scss';
-import { ExamplePostPropType } from './exampleType';
+import { ExamplePost } from './exampleType';
 
 // This uses props to get data from parent
-const View = (props: ExamplePostPropType) => {
-  const { post } = props;
+const View = ({ post }: { post: ExamplePost }) => {
   return <p className={styles.view}>{post.title}</p>;
 };
 

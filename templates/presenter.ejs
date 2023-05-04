@@ -1,7 +1,7 @@
 <% const camelName = name.charAt(0).toUpperCase() + name.slice(1) -%>
 import { placeholderUrl } from '../../controllers/apiURLs';
 import { staticQuery } from '../../controllers/net/staticQuery';
-import styles from './<%=name%>.module.scss'
+import styles from './<%=name%>.module.scss';
 import { <%=camelName%>Type } from './<%=name%>Type';
 
 const Presenter = () => {

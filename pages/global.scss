@@ -19,13 +19,7 @@
   --btn-font-color: #f0f0f0;
   --btn-font-size: 14px;
   --link-color: #5ccbf2;
-}
-
-// NextJS React Root Element
-#__next {
-  min-height: 100vh;
-  display: flex;
-  align-items: stretch;
+  --max-width: 1366px;
 }
 
 // Smooth scroll

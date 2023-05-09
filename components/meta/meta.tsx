@@ -3,9 +3,9 @@ import Head from 'next/head';
 import { TMPropsMeta } from './metaType';
 
 const Meta = (props: TMPropsMeta) => {
-  const orgName = 'junekimdev';
-  const siteName = "another junekimdev's website";
-  const homeUrl = process.env.PUBLIC_URL || 'localhost:3000';
+  const authorName = process.env.AUTHOR_NAME ?? 'junekimdev';
+  const siteName = process.env.SITE_NAME ?? "another junekimdev's website";
+  const homeUrl = process.env.PUBLIC_URL ?? 'localhost:3000';
   const {
     image = `${homeUrl}/assets/images/LogoPlace_Extended_1200x627.png`,
     imageWidth = '1200',
@@ -18,8 +18,8 @@ const Meta = (props: TMPropsMeta) => {
       <link rel="canonical" href={props.url} />
       <meta name="robots" content="index, follow" />
       <meta name="description" content={props.desc} />
-      <meta name="author" content={orgName} />
-      <meta property="article:author" content={orgName} />
+      <meta name="author" content={authorName} />
+      <meta property="article:author" content={authorName} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={props.title} />
       <meta property="og:description" content={props.desc} />
@@ -33,7 +33,7 @@ const Meta = (props: TMPropsMeta) => {
       <meta name="twitter:site" content={siteName} />
       <meta name="twitter:title" content={props.title} />
       <meta name="twitter:description" content={props.desc} />
-      <meta name="twitter:creator" content={orgName} />
+      <meta name="twitter:creator" content={authorName} />
       {props.image && <meta name="twitter:image" content={image} />}
 
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -47,4 +47,5 @@ const Meta = (props: TMPropsMeta) => {
     </Head>
   );
 };
+
 export default Meta;

@@ -1,7 +1,7 @@
 $screen-1: 320px;
 $screen-2: 720px;
-$screen-3: 1024px;
-$screen-4: 1440px;
+$screen-3: 1366px;
+$screen-4: 1920px;
 
 // Media queries
 @mixin mobile-xs {
@@ -62,7 +62,7 @@ $screen-4: 1440px;
     outline: none;
     box-shadow: 0 0 0 2px black;
   }
-  
+
   &:disabled {
     background-color: var(--disabled-color);
     box-shadow: none;

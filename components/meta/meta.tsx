@@ -3,9 +3,9 @@ import Head from 'next/head';
 import { TMPropsMeta } from './metaType';
 
 const Meta = (props: TMPropsMeta) => {
-  const authorName = process.env.AUTHOR_NAME ?? 'junekimdev';
-  const siteName = process.env.SITE_NAME ?? "another junekimdev's website";
-  const homeUrl = process.env.PUBLIC_URL ?? 'localhost:3000';
+  const authorName = 'junekimdev';
+  const siteName = "another junekimdev's website";
+  const homeUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ?? 'localhost:3000';
   const {
     image = `${homeUrl}/assets/images/LogoPlace_Extended_1200x627.png`,
     imageWidth = '1200',

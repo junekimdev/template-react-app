@@ -113,7 +113,6 @@ Root
     ├── index.ts  
     ├── apiURLs.ts  
     ├── net  
-        ├── index.ts  
         └── staticQuery.ts  
     └── moreControllers.ts
 ├── pages  

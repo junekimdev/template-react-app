@@ -7,7 +7,6 @@ module.exports = {
     //NEXT_PUBLIC_GTAG_ID: process.env.NEXT_PUBLIC_GTAG_ID,
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
-  generateBuildId: async () => process.env.BUILD_ID ?? new Date().getTime(),
   eslint: { ignoreDuringBuilds: true },
   poweredByHeader: false,
   reactStrictMode: true,

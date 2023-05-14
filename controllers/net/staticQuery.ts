@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 
 export const staticQuery = <TData = unknown>(url: string) => {
-  return useQuery<TData, Error>({
+  return useQuery<TData, Error, TData, string[]>({
     queryKey: ['static', url],
     queryFn: async ({ queryKey }) => {
       const [_key, url] = queryKey;

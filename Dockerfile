@@ -24,7 +24,7 @@ ARG GIT_HASH
 
 ENV NODE_ENV=production \
   BUILD_ID=${GIT_HASH} \
-  NEXT_PUBLIC_PUBLIC_URL=https://mydomain.com \
+  NEXT_PUBLIC_URL=https://mydomain.com \
   NEXT_PUBLIC_GTAG_ID=GTM-MXDVTH6
 
 # Add all files

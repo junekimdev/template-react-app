@@ -1,5 +1,5 @@
 import Head from 'next/head';
-// import GTag from './gtag';
+import { useGTM } from './gtm';
 import { TMPropsMeta } from './metaType';
 
 const Meta = (props: TMPropsMeta) => {
@@ -11,6 +11,7 @@ const Meta = (props: TMPropsMeta) => {
     imageWidth = '1200',
     imageHeight = '627',
   } = props;
+  // useGTM();
 
   return (
     <Head>

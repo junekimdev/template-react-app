@@ -63,8 +63,9 @@ example
 
 ```shell
 #NODE_ENV=production
-#PUBLIC_URL=https://app.domain.com
-API_URL=http://api.domain.com
+NEXT_PUBLIC_URL=https://app.domain.com
+#NEXT_PUBLIC_GTM_ID=
+NEXT_PUBLIC_API_URL=http://api.domain.com
 ```
 
 ## Tech Stack

@@ -1,7 +1,7 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, UseQueryResult } from '@tanstack/react-query';
 
-export const staticQuery = <TData = unknown>(url: string) => {
-  return useQuery<TData, Error, TData, string[]>({
+export const staticQuery = <T = unknown>(url: string) => {
+  return useQuery<T, Error, T, string[]>({
     queryKey: ['static', url],
     queryFn: async ({ queryKey }) => {
       const [_key, url] = queryKey;
@@ -13,5 +13,5 @@ export const staticQuery = <TData = unknown>(url: string) => {
       throw new Error(msg);
     },
     staleTime: Infinity, // Only Once
-  });
+  }) as UseQueryResult<T, Error>;
 };

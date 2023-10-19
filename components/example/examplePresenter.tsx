@@ -9,7 +9,7 @@ const Presenter = () => {
 
   let contents;
   switch (query.status) {
-    case 'loading':
+    case 'pending':
       contents = <div>Loading...</div>;
       break;
     case 'error':

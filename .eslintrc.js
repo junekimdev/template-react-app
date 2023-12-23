@@ -11,6 +11,7 @@ module.exports = {
     'next',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:prettier/recommended',
+    'plugin:@tanstack/eslint-plugin-query/recommended',
   ],
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   parserOptions: {
@@ -20,7 +21,7 @@ module.exports = {
       jsx: true, // Allows for the parsing of JSX
     },
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', '@tanstack/query'],
   rules: {
     eqeqeq: 'warn',
     'no-mixed-spaces-and-tabs': 'warn',

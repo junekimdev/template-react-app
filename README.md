@@ -80,7 +80,7 @@ NEXT_PUBLIC_API_URL=http://api.domain.com
 - Package management: Webpack (included in NextJS)
 - Transpiler: Speedy Web Compiler (included in NextJS)
 - State management (client): Recoil
-- State management (server): React-query v4
+- State management (server): TanStack Query
 - HTTP interface: fetch API (part of WHATWG Web Standard)
 - JavaScript Testing Framework: Jest
 - React Testing Library: @testing-library/react

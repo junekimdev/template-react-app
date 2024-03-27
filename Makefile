@@ -1,4 +1,4 @@
-.PHONY: all build update up down clean
+.PHONY: all build update up down clean prune
 
 all: build
 
@@ -28,3 +28,6 @@ down:
 
 clean:
 	docker rmi $(shell docker images -qf dangling=true)
+
+prune:
+	docker builder prune -f

@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 import Errors from '../components/errors';
 import { code } from '../components/errors/errorsStates';
-import MainFrame from '../components/mainFrame';
 import Meta from '../components/meta';
 
 const Error404 = () => {
@@ -17,9 +16,9 @@ const Error404 = () => {
   return (
     <>
       <Meta title="404 | June Kim" desc="Error page" url={publicUrl}></Meta>
-      <MainFrame>
+      <main role="main">
         <Errors />
-      </MainFrame>
+      </main>
     </>
   );
 };

@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 import Errors from '../components/errors';
 import { code } from '../components/errors/errorsStates';
-import MainFrame from '../components/mainFrame';
 import Meta from '../components/meta';
 
 type ErrorCodeType = { statusCode: number };
@@ -23,16 +22,20 @@ const Error = ({ statusCode }: ErrorCodeType) => {
   return (
     <>
       <Meta title={`${statusCode} | June Kim`} desc="Error page" url={publicUrl}></Meta>
-      <MainFrame>
+      <main role="main">
         <Errors />
-      </MainFrame>
+      </main>
     </>
   );
 };
 
-Error.getInitialProps = ({ res, err }: NextPageContext) => {
+export const config = {
+  runtime: 'nodejs', // or "edge"
+};
+
+export const getServerSideProps = async ({ res, err }: NextPageContext) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
-  return { statusCode };
+  return { props: { statusCode } };
 };
 
 export default Error;

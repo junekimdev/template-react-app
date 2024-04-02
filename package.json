@@ -18,7 +18,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "recoil": "^0.7.7",
-    "sass": "^1.72.0"
+    "sass": "^1.72.0",
+    "sharp": "^0.33.3"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.28.6",
@@ -49,7 +50,7 @@
       "last 1 firefox version"
     ],
     "ssr": [
-      "node 16"
+      "node 20"
     ]
   }
 }

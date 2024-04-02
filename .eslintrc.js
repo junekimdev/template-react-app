@@ -27,6 +27,14 @@ module.exports = {
     'no-mixed-spaces-and-tabs': 'warn',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
+    'react-hooks/exhaustive-deps': 'off',
+    'no-unused-vars': [
+      'error',
+      {
+        varsIgnorePattern: '^_',
+        argsIgnorePattern: '^_',
+      },
+    ],
   },
   globals: {
     Atomics: 'readonly',

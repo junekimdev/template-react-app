@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import styles from './errors.module.scss';
-import Image from './errorsViewImage';
+import ErrorImage from './errorsViewImage';
 
 const Presenter = () => {
   return (
     <section className={styles.container}>
-      <Image />
+      <ErrorImage />
       <Link href="/">
         <div className={styles.btnBackToHome}>Back to Home</div>
       </Link>

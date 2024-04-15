@@ -59,7 +59,7 @@ const main = async () => {
 
     // Output
     renderEjs(indexTemplate, name, 'index.ts');
-    renderEjs(interactorTemplate, name, `${name}Interactor.tsx`);
+    renderEjs(interactorTemplate, name, `${name}Interactor.ts`);
     renderEjs(presenterTemplate, name, `${name}Presenter.tsx`);
     renderEjs(scssTemplate, name, `${name}.module.scss`);
     renderEjs(typeTemplate, name, `${name}Type.ts`);

@@ -1,7 +1,7 @@
 $screen-1: 320px;
-$screen-2: 720px;
-$screen-3: 1366px;
-$screen-4: 1920px;
+$screen-2: 800px; //SVGA
+$screen-3: 1280px; //HD +FHD/QHD
+$screen-4: 2048px; //2K +4K
 
 // Media queries
 @mixin mobile-xs {

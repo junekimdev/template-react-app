@@ -27,10 +27,11 @@ const main = async () => {
      * v: when true, view will be generated; default to true
      * V: when true, view will not be genereated
      */
-    let { name = 'comp', v = true, V } = getArgs();
+    let { name, v = true, V } = getArgs();
 
-    // Make sure user gives name
-    if (name === 'comp') {
+    // Make sure name has a value
+    while (!name) {
+      console.log('Component name is NOT found!');
       name = await askQuestion('Name of the Component?');
     }
 

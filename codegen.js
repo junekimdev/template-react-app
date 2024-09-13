@@ -27,11 +27,11 @@ const main = async () => {
      * v: when true, view will be generated; default to true
      * V: when true, view will not be genereated
      */
-    let { name, v = true, V } = getArgs();
+    let { name = 'comp', v = true, V } = getArgs();
 
-    // Make sure name has a value
-    if (!name) {
-      name = await askQuestion('Name of the Component? ');
+    // Make sure user gives name
+    if (name === 'comp') {
+      name = await askQuestion('Name of the Component?');
     }
 
     // Check if the directory exists
@@ -40,7 +40,7 @@ const main = async () => {
       fs.accessSync(dirPath);
       // If exists, ask to overwrite or not
       console.log('A component with the given name already exists');
-      const ans = await askQuestion('Do you want to overwrite it? [y/n] ');
+      const ans = await askQuestion('Do you want to overwrite it? [y/N]');
       if (ans !== 'y' && ans !== 'Y') process.exit(1);
     } catch (e) {
       // Not existing, create it

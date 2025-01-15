@@ -1,11 +1,11 @@
 <% const camelName = name.charAt(0).toUpperCase() + name.slice(1) -%>
-import { useRecoilValue } from 'recoil';
+import { useAtomValue } from 'jotai';
 import styles from './<%=name%>.module.scss';
 import { useLinkClick } from './<%=name%>Interactor';
 import { <%=camelName%>State } from './<%=name%>States';
 
 const View = () => {
-  const data = useRecoilValue(<%=camelName%>State);
+  const data = useAtomValue(<%=camelName%>State);
   const onLinkClick = useLinkClick();
 
   return <div className={styles.view}>{data}</div>;

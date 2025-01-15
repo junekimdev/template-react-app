@@ -1,6 +1,6 @@
 import { useQuery, UseQueryResult } from '@tanstack/react-query';
 
-export const staticQuery = <T = unknown>(url: string) => {
+export const useStaticQuery = <T = unknown>(url: string) => {
   return useQuery<T, Error, T, string[]>({
     queryKey: ['static', url],
     queryFn: async ({ queryKey }) => {

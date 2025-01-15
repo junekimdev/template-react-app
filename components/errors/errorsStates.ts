@@ -1,3 +1,3 @@
-import { atom } from 'recoil';
+import { atom } from 'jotai';
 
-export const code = atom({ key: 'error-code', default: 500 });
+export const code = atom(500);

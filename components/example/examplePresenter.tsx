@@ -1,11 +1,11 @@
 import { placeholderUrl } from '../../controllers/apiURLs';
-import { staticQuery } from '../../controllers/net/staticQuery';
+import { useStaticQuery } from '../../controllers/net/staticQuery';
 import styles from './example.module.scss';
 import { ExamplePost } from './exampleType';
 import Posts from './exampleViewPosts';
 
 const Presenter = () => {
-  const query = staticQuery<ExamplePost[]>(placeholderUrl);
+  const query = useStaticQuery<ExamplePost[]>(placeholderUrl);
 
   let contents;
   switch (query.status) {

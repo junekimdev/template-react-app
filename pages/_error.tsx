@@ -1,6 +1,6 @@
+import { useSetAtom } from 'jotai';
 import { NextPageContext } from 'next';
 import { useEffect } from 'react';
-import { useSetRecoilState } from 'recoil';
 import Errors from '../components/errors';
 import { code } from '../components/errors/errorsStates';
 import Meta from '../components/meta';
@@ -9,7 +9,7 @@ type ErrorCodeType = { statusCode: number };
 
 const Error = ({ statusCode }: ErrorCodeType) => {
   const publicUrl = process.env.PUBLIC_URL || 'localhost:3000';
-  const setErrorCode = useSetRecoilState(code);
+  const setErrorCode = useSetAtom(code);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,7 +17,7 @@ const Error = ({ statusCode }: ErrorCodeType) => {
 
   useEffect(() => {
     setErrorCode(statusCode);
-  }, [statusCode]);
+  }, [setErrorCode, statusCode]);
 
   return (
     <>

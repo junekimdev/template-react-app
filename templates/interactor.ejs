@@ -1,10 +1,10 @@
 <% const camelName = name.charAt(0).toUpperCase() + name.slice(1) -%>
+import { useSetAtom } from 'jotai';
 import { MouseEvent, useCallback } from 'react';
-import { useSetRecoilState } from 'recoil';
 import { <%=camelName%>State } from './<%=name%>States';
 
 export const useLinkClick = () => {
-  const setState = useSetRecoilState(<%=camelName%>State);
+  const setState = useSetAtom(<%=camelName%>State);
 
   return useCallback((e: MouseEvent<HTMLAnchorElement>) => {
     const id: string = e.target.id ?? '';

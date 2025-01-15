@@ -1,31 +1,43 @@
-$screen-1: 320px;
-$screen-2: 800px; //SVGA
-$screen-3: 1280px; //HD +FHD/QHD
-$screen-4: 2048px; //2K +4K
+$screen-1: 320px; // mobile-portrait
+$screen-2: 480px; // mobile-landscape
+$screen-3: 768px; // tablet-portrait
+$screen-4: 1024px; // pc & tablet-landscape
+$screen-5: 2048px; // pc-wide
 
 // Media queries
+// Wearable devices
 @mixin mobile-xs {
-  @media only screen and (max-width: #{$screen-1}) {
+  @media only screen and (width < $screen-1) {
     @content;
   }
 }
 
-// "Mobile screen" is the base of css stylesheet
+// "Mobile portrait" is default
+// $screen-1 <= width < $screen-2
 
+// Mobile-landscape
+@mixin mobile-wide {
+  @media only screen and ($screen-2 <= width) {
+    @content;
+  }
+}
+
+// Tablet-portrait
 @mixin tablet {
-  @media only screen and (min-width: #{$screen-2}) {
+  @media only screen and ($screen-3 <= width) {
     @content;
   }
 }
 
+// PC & Tablet-landscape
 @mixin pc {
-  @media only screen and (min-width: #{$screen-3}) {
+  @media only screen and ($screen-4 <= width) {
     @content;
   }
 }
 
-@mixin pc-xl {
-  @media only screen and (min-width: #{$screen-4}) {
+@mixin pc-wide {
+  @media only screen and ($screen-5 <= width) {
     @content;
   }
 }

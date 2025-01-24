@@ -1,12 +1,12 @@
 import { useSetAtom } from 'jotai';
 import { useEffect } from 'react';
 import Errors from '../components/errors';
-import { code } from '../components/errors/errorsStates';
 import Meta from '../components/meta';
+import { stateErrorCode } from '../controllers/data/states';
 
 const Error404 = () => {
   const publicUrl = process.env.PUBLIC_URL || 'localhost:3000';
-  const setErrorCode = useSetAtom(code);
+  const setErrorCode = useSetAtom(stateErrorCode);
 
   useEffect(() => {
     setErrorCode(404);

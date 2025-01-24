@@ -55,16 +55,12 @@ const main = async () => {
     const presenterTemplate = path.join(__dirname, 'templates', 'presenter.ejs');
     const scssTemplate = path.join(__dirname, 'templates', 'scss.ejs');
     const viewTemplate = path.join(__dirname, 'templates', 'view.ejs');
-    const typeTemplate = path.join(__dirname, 'templates', 'type.ejs');
-    const statesTemplate = path.join(__dirname, 'templates', 'states.ejs');
 
     // Output
     renderEjs(indexTemplate, name, 'index.ts');
     renderEjs(interactorTemplate, name, `${name}Interactor.ts`);
     renderEjs(presenterTemplate, name, `${name}Presenter.tsx`);
     renderEjs(scssTemplate, name, `${name}.module.scss`);
-    renderEjs(typeTemplate, name, `${name}Type.ts`);
-    renderEjs(statesTemplate, name, `${name}States.ts`);
     if (v && !V) renderEjs(viewTemplate, name, `${name}View.tsx`);
 
     console.log(`Generated the component: ${name}`);

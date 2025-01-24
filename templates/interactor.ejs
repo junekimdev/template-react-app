@@ -1,13 +1,12 @@
 <% const camelName = name.charAt(0).toUpperCase() + name.slice(1) -%>
-import { useSetAtom } from 'jotai';
-import { MouseEvent, useCallback } from 'react';
-import { <%=camelName%>State } from './<%=name%>States';
+import { Dispatch, SetStateAction } from 'react';
 
-export const useLinkClick = () => {
-  const setState = useSetAtom(<%=camelName%>State);
-
-  return useCallback((e: MouseEvent<HTMLAnchorElement>) => {
-    const id: string = e.target.id ?? '';
-    setState(id);
-  }, []);
+export const useLinkClick = (setState: Dispatch<SetStateAction<string>>) => {
+  return useCallback(
+    (e: MouseEvent<HTMLAnchorElement>) => {
+      const id: string = e.target.id ?? '';
+      setState(id);
+    },
+    [setState],
+  );
 };

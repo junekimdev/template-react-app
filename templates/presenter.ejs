@@ -1,27 +1,8 @@
 <% const camelName = name.charAt(0).toUpperCase() + name.slice(1) -%>
-import { placeholderUrl } from '../../controllers/apiURLs';
-import { staticQuery } from '../../controllers/net/staticQuery';
 import styles from './<%=name%>.module.scss';
-import { <%=camelName%>Type } from './<%=name%>Type';
 
 const Presenter = () => {
-  const query = staticQuery<<%=camelName%>Type>(placeholderUrl);
-
-  let contents;
-  switch (query.status) {
-    case 'pending':
-      contents = <div>Loading...</div>;
-      break;
-    case 'error':
-      contents = <div>Error: {query.error.message}</div>;
-      break;
-    case 'success':
-      contents = <div>{query.data}</div>;
-      break;
-    default:
-      contents = <div></div>;
-      break;
-  }
+  const contents = "placeholder";
 
   return <section className={styles.container}>{contents}</section>;
 };

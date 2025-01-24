@@ -2,14 +2,12 @@ import { useSetAtom } from 'jotai';
 import { NextPageContext } from 'next';
 import { useEffect } from 'react';
 import Errors from '../components/errors';
-import { code } from '../components/errors/errorsStates';
 import Meta from '../components/meta';
+import { stateErrorCode } from '../controllers/data/states';
 
-type ErrorCodeType = { statusCode: number };
-
-const Error = ({ statusCode }: ErrorCodeType) => {
+const Error = ({ statusCode }: { statusCode: number }) => {
   const publicUrl = process.env.PUBLIC_URL || 'localhost:3000';
-  const setErrorCode = useSetAtom(code);
+  const setErrorCode = useSetAtom(stateErrorCode);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,7 +32,7 @@ export const config = {
 };
 
 export const getServerSideProps = async ({ res, err }: NextPageContext) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+  const statusCode = res ? res.statusCode : (err?.statusCode ?? 404);
   return { props: { statusCode } };
 };
 

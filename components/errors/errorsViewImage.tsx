@@ -1,13 +1,13 @@
 import { useAtomValue } from 'jotai';
 import Image from 'next/image';
 import Link from 'next/link';
+import { stateErrorCode } from '../../controllers/data/states';
 import imageSrc404 from '../../public/assets/images/404_broken_robot.png';
 import imageSrc500 from '../../public/assets/images/500_faulty_dog.png';
 import styles from './errors.module.scss';
-import { code } from './errorsStates';
 
 const View = () => {
-  const errorCode = useAtomValue(code);
+  const errorCode = useAtomValue(stateErrorCode);
 
   return (
     <div className={styles.errorImage}>

@@ -79,12 +79,12 @@ NEXT_PUBLIC_API_URL=http://api.domain.com
 - Website server-side rendering framework: NextJS
 - Package management: Webpack (included in NextJS)
 - Transpiler: Speedy Web Compiler (included in NextJS)
-- State management (client): Recoil
+- State management (client): Jotai
 - State management (server): TanStack Query
 - HTTP interface: fetch API (part of WHATWG Web Standard)
 - JavaScript Testing Framework: Jest
 - React Testing Library: @testing-library/react
-- Browser style normalization script: Normalize
+- Browser style normalization script: Modern-normalize
 - Stylesheet preprocessor: SCSS
 - Stylesheet postprocessor: Postcss (included in NextJS)
 - Postcss plugin: Autoprefixer (included in NextJS)
@@ -113,6 +113,10 @@ Root
 ├── controllers  
     ├── index.ts  
     ├── apiURLs.ts  
+    ├── data  
+        ├── states.ts  
+        ├── types.ts  
+        └── staticQuery.ts  
     ├── net  
         └── staticQuery.ts  
     └── moreControllers.ts

@@ -80,11 +80,11 @@ NEXT_PUBLIC_API_URL=http://api.domain.com
 - Package management: Webpack (included in NextJS)
 - Transpiler: Speedy Web Compiler (included in NextJS)
 - State management (client): Jotai
-- State management (server): TanStack Query
+- State management (data-fetch): TanStack Query
 - HTTP interface: fetch API (part of WHATWG Web Standard)
 - JavaScript Testing Framework: Jest
 - React Testing Library: @testing-library/react
-- Browser style normalization script: Modern-normalize
+- Browser style normalization script: Normalize
 - Stylesheet preprocessor: SCSS
 - Stylesheet postprocessor: Postcss (included in NextJS)
 - Postcss plugin: Autoprefixer (included in NextJS)
@@ -106,10 +106,8 @@ Root
         ├── index.ts  
         ├── eachComponent.module.scss  
         ├── eachComponentInteractor.tsx  
-        ├── eachComponentStates.ts  
         ├── eachComponentPresenter.tsx  
-        ├── eachComponentViewName.tsx  
-        └── eachComponentType.ts  
+        └── eachComponentViewName.tsx  
 ├── controllers  
     ├── index.ts  
     ├── apiURLs.ts  

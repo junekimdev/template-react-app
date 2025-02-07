@@ -10,7 +10,7 @@
     "build": "next build",
     "export": "next export",
     "lint": "eslint",
-    "inspect-lint": "eslint --inspect-config",
+    "lint-inspect": "eslint --inspect-config",
     "start": "next start"
   },
   "dependencies": {

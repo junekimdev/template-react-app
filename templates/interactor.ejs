@@ -1,5 +1,4 @@
-<% const camelName = name.charAt(0).toUpperCase() + name.slice(1) -%>
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, MouseEvent, SetStateAction, useCallback } from 'react';
 
 export const useLinkClick = (setState: Dispatch<SetStateAction<string>>) => {
   return useCallback(

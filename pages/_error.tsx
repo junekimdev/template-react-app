@@ -3,11 +3,11 @@ import { NextPageContext } from 'next';
 import { useEffect } from 'react';
 import Errors from '../components/errors';
 import Meta from '../components/meta';
-import { stateErrorCode } from '../controllers/data/states';
+import * as gState from '../controllers/data/states';
 
 const Error = ({ statusCode }: { statusCode: number }) => {
   const publicUrl = process.env.PUBLIC_URL || 'localhost:3000';
-  const setErrorCode = useSetAtom(stateErrorCode);
+  const setErrorCode = useSetAtom(gState.errorCode);
 
   useEffect(() => {
     window.scrollTo(0, 0);

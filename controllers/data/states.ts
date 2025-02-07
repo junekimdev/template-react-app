@@ -1,3 +1,3 @@
 import { atom } from 'jotai';
 
-export const stateErrorCode = atom(500);
+export const errorCode = atom(500);

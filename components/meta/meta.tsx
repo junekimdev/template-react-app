@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { useGTM } from './gtm';
-import { TMPropsMeta } from './metaType';
+import * as mType from './metaType';
 
-const Meta = (props: TMPropsMeta) => {
+const Meta = (props: mType.Props) => {
   const authorName = 'junekimdev';
   const siteName = "another junekimdev's website";
   const homeUrl = process.env.NEXT_PUBLIC_URL ?? 'localhost:3000';

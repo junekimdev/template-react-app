@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export type TMPropsMeta = {
+export type Props = {
   title: string;
   desc: string;
   url: string;

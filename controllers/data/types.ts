@@ -1,1 +1,1 @@
-export type TypeError = { code: number; message: string };
+export type Error = { code: number; message: string };

@@ -128,6 +128,7 @@ export default [
       '.env*',
       '*.env',
       '.vscode/',
+      'public/',
       'placeholder_*',
     ],
   },

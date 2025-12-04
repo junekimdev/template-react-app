@@ -2,11 +2,15 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "lib": ["DOM", "ESNext", "WebWorker"],
+    "lib": [
+      "DOM",
+      "ESNext",
+      "WebWorker"
+    ],
     "declaration": true,
     "declarationMap": true,
     "noEmit": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "pretty": true,
@@ -26,6 +30,12 @@
     "allowJs": true,
     "incremental": true
   },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }

@@ -4,7 +4,7 @@ const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? 'GTM-MXDVTH6';
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en" className="no-js">
+      <Html lang="en" className="no-js" data-scroll-behavior="smooth">
         <Head />
         <body>
           <noscript

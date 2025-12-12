@@ -14,21 +14,21 @@
     "start": "next start"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.90.11",
-    "jotai": "^2.15.2",
-    "next": "^16.0.7",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
-    "sass": "^1.94.2",
+    "@tanstack/react-query": "^5.90.12",
+    "jotai": "^2.16.0",
+    "next": "^16.0.10",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "sass": "^1.96.0",
     "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@next/eslint-plugin-next": "^16.0.7",
+    "@next/eslint-plugin-next": "^16.0.10",
     "@stylistic/eslint-plugin": "^5.6.1",
     "@tanstack/react-query-devtools": "^5.91.1",
     "@testing-library/react": "^16.3.0",
-    "@types/node": "^24.10.1",
+    "@types/node": "^25.0.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "ejs": "^3.1.10",
@@ -39,7 +39,7 @@
     "jest-environment-jsdom": "^30.2.0",
     "prettier": "^3.7.4",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.48.1"
+    "typescript-eslint": "^8.49.0"
   },
   "browserslist": {
     "production": [

@@ -51,7 +51,7 @@
       "last 1 firefox version"
     ],
     "ssr": [
-      "node 22"
+      "node 24"
     ]
   }
 }

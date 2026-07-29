@@ -14,7 +14,7 @@ const renderEjs = (templateFile, name, outFilename) => {
       const writer = fs.createWriteStream(filePath, { flags: 'w' });
       writer.write(str);
       writer.end();
-    } catch (e) {
+    } catch {
       console.error(`Failed to create file: ${outFilename}`);
     }
   });
@@ -43,7 +43,7 @@ const main = async () => {
       console.log('A component with the given name already exists');
       const ans = await askQuestion('Do you want to overwrite it? [y/N]');
       if (ans !== 'y' && ans !== 'Y') process.exit(1);
-    } catch (e) {
+    } catch {
       // Not existing, create it
       console.log(`Creating ${dirPath}`);
       fs.mkdirSync(dirPath);
@@ -69,4 +69,4 @@ const main = async () => {
   }
 };
 
-main();
+await main();

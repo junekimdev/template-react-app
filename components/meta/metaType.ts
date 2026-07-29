@@ -7,5 +7,5 @@ export type Props = {
   image?: string;
   imageWidth?: string;
   imageHeight?: string;
-  children?: ReactNode[] | ReactNode | any;
+  children?: ReactNode[] | ReactNode;
 };

@@ -4,8 +4,8 @@ export const useStaticQuery = <T = unknown>(url: string) => {
   return useQuery<T, Error, T, string[]>({
     queryKey: ['static', url],
     queryFn: async ({ queryKey }) => {
-      const [_key, url] = queryKey;
-      const res = await fetch(url);
+      const [_key, _url] = queryKey;
+      const res = await fetch(_url);
       if (res.ok) {
         return await res.json();
       }
@@ -13,5 +13,5 @@ export const useStaticQuery = <T = unknown>(url: string) => {
       throw new Error(msg);
     },
     staleTime: Infinity, // Only Once
-  }) as UseQueryResult<T, Error>;
+  }) as UseQueryResult<T>;
 };

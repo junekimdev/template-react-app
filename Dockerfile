@@ -6,7 +6,7 @@ LABEL maintainer="June Kim" version="1.0"
 WORKDIR /app
 
 # Add package files
-COPY package.json yarn.lock ./
+COPY package.json pnpm-lock.yaml ./
 
 # Install deps
 RUN set -eux \
@@ -15,9 +15,10 @@ RUN set -eux \
   g++ \
   make \
   python \
-  yarn \
-  && yarn global add node-gyp \
-  && yarn install \
+  npm \
+  && npm install -g pnpm \
+  && pnpm add -g node-gyp \
+  && pnpm install \
   && apk del .build-deps
 
 ARG GIT_HASH
@@ -31,8 +32,8 @@ ENV NODE_ENV=production \
 COPY ./ ./
 
 # Build and clean up
-RUN yarn build
+RUN pnpm build
 
 EXPOSE 3000
 
-CMD ["yarn", "start"]
+CMD ["pnpm", "start"]

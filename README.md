@@ -30,7 +30,7 @@ sudo apt install nodejs
 nodejs -v
 
 # Windows
-choco install nodejs-lts
+winget install --exact --id OpenJS.NodeJS.LTS
 ```
 
 ### Installation
@@ -42,7 +42,7 @@ Clone the repo and install dependencies
 # if the directory is already created, then use .(dot) instead of myAppName
 git clone https://github.com/junekimdev/template-react-app.git <myAppName>
 cd myAppName
-yarn
+pnpm i
 ```
 
 Make sure to remove `.git` directory to start afresh
@@ -73,7 +73,7 @@ NEXT_PUBLIC_API_URL=http://api.domain.com
 - Markup language (Web Standard): HTML5
 - Stylesheet language (Web Standard): CSS3
 - Script language: ECMAScript 2015 (a.k.a Javascript ES6)
-- Javascript Package Manager: Yarn
+- Javascript Package Manager: Pnpm
 - Script preprocessor: Typescript
 - Website client-side rendering framework: ReactJS
 - Website server-side rendering framework: NextJS
